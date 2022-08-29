@@ -1,7 +1,7 @@
 import express, { Express } from 'express';
 import { Server } from 'http';
 import LoggerService from './logger/logger.service.js';
-import UsersController from './users/users.controller';
+import UsersController from './users/user.controller';
 
 export default class App {
   app: Express;
