@@ -2,9 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03d52cdb-31d2-4201-ab37-d45c57496da7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/users/users.controller.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/base.contoller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/base.contoller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/route.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/route.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/exception.filter.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/exception.filter.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/exeption.filter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/exeption.filter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors/http-error.class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors/http-error.class.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logger/logger.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger/logger.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logger/logger.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/logger/logger.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/users.controller.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.controller.interface.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,18 +46,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/PhpStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/romankulikov/code/dashboard-api/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "/Users/romankulikov/code/dashboard-api/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,7 +72,7 @@
       <updated>1664454943011</updated>
       <workItem from="1664454944154" duration="5620000" />
       <workItem from="1664532485591" duration="4354000" />
-      <workItem from="1664800498226" duration="15412000" />
+      <workItem from="1664800498226" duration="19872000" />
     </task>
     <servers />
   </component>
@@ -83,5 +101,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
