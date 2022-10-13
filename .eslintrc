@@ -28,7 +28,8 @@
         "trailingComma": "all",
         "bracketSpacing": true,
         "printWidth": 100,
-        "endOfLine": "auto"
+        "endOfLine": "auto",
+        "tabWidth": 4
       }
     ]
   }
