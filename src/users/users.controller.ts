@@ -25,12 +25,26 @@ export default class UsersController extends BaseController implements IUserCont
 				func: this.register,
 				middlewares: [new ValidateMiddleware(UsersRegisterDto)],
 			},
+			{
+				path: '/login',
+				method: 'post',
+				func: this.login,
+				middlewares: [new ValidateMiddleware(UsersLoginDto)],
+			},
 			{ path: '/login', method: 'post', func: this.login },
 		]);
 	}
 
-	login(req: Request<{}, {}, UsersLoginDto>, res: Response, next: NextFunction): void {
-		next(new HttpError(401, 'auth error', 'login'));
+	async login(
+		req: Request<{}, {}, UsersLoginDto>,
+		res: Response,
+		next: NextFunction,
+	): Promise<void> {
+		const result = await this.UserService.validateUser(req.body);
+		if (!result) {
+			return next(new HttpError(401, 'auth error', 'login'));
+		}
+		this.ok(res, {});
 	}
 
 	async register(
