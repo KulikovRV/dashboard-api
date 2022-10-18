@@ -1,6 +1,6 @@
 import App from './app';
 import LoggerService from './logger/logger.service';
-import UserController from './users/user.controller';
+import UsersController from './users/users.controller';
 import ExceptionFilter from './errors/exeption.filter';
 import { Container, ContainerModule, interfaces } from 'inversify';
 import { ILogger } from './logger/logger.interface';
@@ -8,7 +8,7 @@ import { TYPES } from './types';
 import { IExceptionFilter } from './errors/exception.filter.interface';
 import { IUserService } from './users/user.service.interface';
 import { IUserController } from './users/users.controller.interface';
-import { UserService } from './users/user.service';
+import { UsersService } from './users/users.service';
 import { IConfigService } from './config/config.service.interface';
 import { ConfigService } from './config/config.service';
 import { PrismaService } from './database/prisma.service';
@@ -21,8 +21,8 @@ export interface IBootstrapReturnType {
 export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
 	bind<ILogger>(TYPES.ILogger).to(LoggerService).inSingletonScope();
 	bind<IExceptionFilter>(TYPES.ExceptionFilter).to(ExceptionFilter).inSingletonScope();
-	bind<IUserController>(TYPES.UserController).to(UserController).inSingletonScope();
-	bind<IUserService>(TYPES.UserService).to(UserService).inSingletonScope();
+	bind<IUserController>(TYPES.UserController).to(UsersController).inSingletonScope();
+	bind<IUserService>(TYPES.UserService).to(UsersService).inSingletonScope();
 	bind<IConfigService>(TYPES.ConfigService).to(ConfigService).inSingletonScope();
 	bind<PrismaService>(TYPES.PrismaService).to(PrismaService).inSingletonScope();
 	bind<App>(TYPES.Application).to(App).inSingletonScope();

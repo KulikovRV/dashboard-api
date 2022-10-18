@@ -6,16 +6,16 @@ import { TYPES } from '../types';
 import { ILogger } from '../logger/logger.interface';
 import 'reflect-metadata';
 import { IUserController } from './users.controller.interface';
-import { UserLoginDto } from './dto/user-login.dto';
-import { UserRegisterDto } from './dto/user-register.dto';
-import { UserService } from './user.service';
+import { UsersLoginDto } from './dto/users-login.dto';
+import { UsersRegisterDto } from './dto/users-register.dto';
+import { UsersService } from './users.service';
 import { ValidateMiddleware } from '../common/validate.middleware';
 
 @injectable()
-export default class UserController extends BaseController implements IUserController {
+export default class UsersController extends BaseController implements IUserController {
 	constructor(
 		@inject(TYPES.ILogger) private loggerService: ILogger,
-		@inject(TYPES.UserService) private UserService: UserService,
+		@inject(TYPES.UserService) private UserService: UsersService,
 	) {
 		super(loggerService);
 		this.bindRoutes([
@@ -23,18 +23,18 @@ export default class UserController extends BaseController implements IUserContr
 				path: '/register',
 				method: 'post',
 				func: this.register,
-				middlewares: [new ValidateMiddleware(UserRegisterDto)],
+				middlewares: [new ValidateMiddleware(UsersRegisterDto)],
 			},
 			{ path: '/login', method: 'post', func: this.login },
 		]);
 	}
 
-	login(req: Request<{}, {}, UserLoginDto>, res: Response, next: NextFunction): void {
+	login(req: Request<{}, {}, UsersLoginDto>, res: Response, next: NextFunction): void {
 		next(new HttpError(401, 'auth error', 'login'));
 	}
 
 	async register(
-		{ body }: Request<{}, {}, UserRegisterDto>,
+		{ body }: Request<{}, {}, UsersRegisterDto>,
 		res: Response,
 		next: NextFunction,
 	): Promise<void> {

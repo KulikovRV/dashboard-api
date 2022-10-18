@@ -1,8 +1,8 @@
-import { UserRegisterDto } from './dto/user-register.dto';
-import { User } from './user.entity';
-import { UserLoginDto } from './dto/user-login.dto';
+import { UsersRegisterDto } from './dto/users-register.dto';
+import { User } from './users.entity';
+import { UsersLoginDto } from './dto/users-login.dto';
 
 export interface IUserService {
-	createUser: (dto: UserRegisterDto) => Promise<User | null>;
-	validateUser: (dto: UserLoginDto) => Promise<boolean>;
+	createUser: (dto: UsersRegisterDto) => Promise<User | null>;
+	validateUser: (dto: UsersLoginDto) => Promise<boolean>;
 }
