@@ -8,14 +8,17 @@ import 'reflect-metadata';
 import { IUserController } from './users.controller.interface';
 import { UsersLoginDto } from './dto/users-login.dto';
 import { UsersRegisterDto } from './dto/users-register.dto';
-import { UsersService } from './users.service';
 import { ValidateMiddleware } from '../common/validate.middleware';
+import { sign } from 'jsonwebtoken';
+import { IConfigService } from '../config/config.service.interface';
+import { IUserService } from './user.service.interface';
 
 @injectable()
 export default class UsersController extends BaseController implements IUserController {
 	constructor(
 		@inject(TYPES.ILogger) private loggerService: ILogger,
-		@inject(TYPES.UserService) private UserService: UsersService,
+		@inject(TYPES.UserService) private userService: IUserService,
+		@inject(TYPES.ConfigService) private configService: IConfigService,
 	) {
 		super(loggerService);
 		this.bindRoutes([
@@ -40,11 +43,12 @@ export default class UsersController extends BaseController implements IUserCont
 		res: Response,
 		next: NextFunction,
 	): Promise<void> {
-		const result = await this.UserService.validateUser(req.body);
+		const result = await this.userService.validateUser(req.body);
 		if (!result) {
 			return next(new HttpError(401, 'auth error', 'login'));
 		}
-		this.ok(res, {});
+		const jwt = await this.signJWT(req.body.email, this.configService.get('SECRET'));
+		this.ok(res, { jwt });
 	}
 
 	async register(
@@ -52,10 +56,31 @@ export default class UsersController extends BaseController implements IUserCont
 		res: Response,
 		next: NextFunction,
 	): Promise<void> {
-		const result = await this.UserService.createUser(body);
+		const result = await this.userService.createUser(body);
 		if (!result) {
 			return next(new HttpError(422, 'User exists'));
 		}
 		this.ok(res, { email: result.email, id: result.id });
+	}
+
+	private signJWT(email: string, secret: string): Promise<string> {
+		return new Promise((resolve, reject) => {
+			sign(
+				{
+					email,
+					iat: Math.floor(Date.now() / 1000),
+				},
+				secret,
+				{
+					algorithm: 'HS256',
+				},
+				(err, token) => {
+					if (err) {
+						reject(err);
+					}
+					resolve(token as string);
+				},
+			);
+		});
 	}
 }
