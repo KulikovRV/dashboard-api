@@ -34,7 +34,12 @@ export default class UsersController extends BaseController implements IUserCont
 				func: this.login,
 				middlewares: [new ValidateMiddleware(UsersLoginDto)],
 			},
-			{ path: '/login', method: 'post', func: this.login },
+			{
+				path: '/info',
+				method: 'get',
+				func: this.info,
+				middlewares: [],
+			},
 		]);
 	}
 
@@ -61,6 +66,10 @@ export default class UsersController extends BaseController implements IUserCont
 			return next(new HttpError(422, 'User exists'));
 		}
 		this.ok(res, { email: result.email, id: result.id });
+	}
+
+	async info({ user }: Request, res: Response, next: NextFunction): Promise<void> {
+		this.ok(res, { email: user });
 	}
 
 	private signJWT(email: string, secret: string): Promise<string> {
