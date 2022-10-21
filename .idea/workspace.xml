@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03d52cdb-31d2-4201-ab37-d45c57496da7" name="Changes" comment="add: jwt sign">
-      <change afterPath="$PROJECT_DIR$/src/common/auth.middleware.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/custom.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/users/users.controller.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.controller.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/auth.middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/auth.middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/user.service.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/user.service.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/users/users.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +67,7 @@
       <workItem from="1664454944154" duration="5620000" />
       <workItem from="1664532485591" duration="4354000" />
       <workItem from="1664800498226" duration="46714000" />
-      <workItem from="1666010646261" duration="16241000" />
+      <workItem from="1666010646261" duration="18171000" />
     </task>
     <task id="LOCAL-00001" summary="add: jwt sign">
       <created>1666169437776</created>
